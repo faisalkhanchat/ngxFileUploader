@@ -2,6 +2,62 @@
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 6.1.5.
 
+# Importing file uploader in module 
+
+import { BrowserModule } from '@angular/platform-browser';
+import { NgModule } from '@angular/core';
+import { AppComponent } from './app.component';
+// below the module are the dependency with fileuploader module
+import { FileUploaderModule } from './FileUploader/file-uploader.module';
+import { MaterialModule } from './material/material.module';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+
+@NgModule({
+  declarations: [
+    AppComponent
+  ],
+  imports: [
+    BrowserModule,
+  // import module here
+    BrowserAnimationsModule,
+    MaterialModule,
+    FileUploaderModule
+
+  ],
+  providers: [],
+  bootstrap: [AppComponent]
+})
+export class AppModule { }
+
+
+# File uploader component html file
+    <app-file-uploader class="file-uploader" label="Upload Multiple Images" accept="image/png,image/jpg,image/jpeg"
+    [maxFiles]="10" #imageStore="FileList"></app-file-uploader>    
+
+# File uploader component .ts file
+
+import { Component, ViewChild, OnInit } from '@angular/core';
+import { FileUploaderComponent } from './FileUploader/file-uploader.component';
+
+@Component({
+  selector: 'app-root',
+  templateUrl: './app.component.html',
+  styleUrls: ['./app.component.css']
+})
+export class AppComponent implements OnInit {
+  // here the code for file response
+  @ViewChild('imageStore') _images: FileUploaderComponent;
+  constructor() { }
+
+  ngOnInit() {
+    // here the code console the output
+    console.log(this._images);
+  }
+}
+
+
+
+
 ## Development server
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
