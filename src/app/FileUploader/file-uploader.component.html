@@ -1,0 +1,38 @@
+<div class="uploader__header">
+  <span class="uploader__label">{{label}}</span>
+  <button mat-button mat-button color="primary" (click)="onAddFileHandler()" *ngIf="hasMultiple">
+    <mat-icon>add</mat-icon>
+  </button>
+</div>
+<div class="uploader__body" [ngClass]="{'uploader__body--active': isDropActive}" (drop)="onDropHandler($event)" (dragenter)="onDragEnterHandler($event)" (dragover)="onDragOverHandler($event)" (dragleave)="onDragLeaveHandler($event)">
+  <div class="uploader__placeholder" (click)="onAddFileHandler()" *ngIf="data.length === 0">
+    <mat-icon>cloud_upload</mat-icon><br/>
+    <span>Choose file or drag it here</span>
+  </div>
+  <div class="uploader__preview"  *ngIf="data.length !== 0">
+    <!-- <button></button> -->
+    <div class="uploader__file" *ngFor="let fileData of data">
+      <ng-container [ngSwitch]="fileData.type.split('/')[0]">
+        <img [src]="fileData.url" *ngSwitchCase="'image'"/>
+        <video *ngSwitchCase="'video'" controls (canplay)="onCanPlayHandler(fileData, $event.currentTarget)">
+          <ng-container>
+            <source [src]="fileData.url" type="video/mp4">
+            <source [src]="fileData.url" type="video/3gp">
+            <source [src]="fileData.url" type="video/flv">
+          </ng-container>
+          <span>dfgsdfg</span>
+        </video>
+        <div class="file-button">
+          <!-- <button mat-icon-button (click)="onCreateThumbnailHandler(fileData, $event.currentTarget.parentElement.parentElement)" matTooltip="Create Thumbnail" *ngIf="fileData.type.split('/')[0] === 'video'">
+            <mat-icon>add_photo_alternate</mat-icon>
+          </button> -->
+          <button mat-icon-button color="warn" (click)="onRemoveFileHandler(fileData)" matTooltip="Delete File">
+            <mat-icon>delete</mat-icon>
+          </button>
+        </div>
+      </ng-container>
+    </div>
+    <!-- <button></button> -->
+  </div>
+</div>
+<span class="uploader__error" [ngClass]="{'uploader__error--show': error}">{{error}}</span>
