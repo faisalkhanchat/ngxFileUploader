@@ -1,6 +1,8 @@
 # NgxFileUploader
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 6.1.5.
+Angular 4+ Single Multiple any kind of file up-loader like image , psd, word , audio, any document. 
+1) Preview and delete feature.
+2) Drag & Drop Feature
 
 # Importing file uploader in module 
 
