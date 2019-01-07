@@ -37,6 +37,7 @@ export class AppModule { }
 
 # File uploader component .ts file
 
+```
 import { Component, ViewChild, OnInit } from '@angular/core';
 import { FileUploaderComponent } from './FileUploader/file-uploader.component';
 
@@ -55,7 +56,7 @@ export class AppComponent implements OnInit {
     console.log(this._images);
   }
 }
-
+```
 
 
 
