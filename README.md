@@ -30,6 +30,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 export class AppModule { }
 
 
+
 # File uploader component html file
     <app-file-uploader class="file-uploader" label="Upload Multiple Images" accept="image/png,image/jpg,image/jpeg"
     [maxFiles]="10" #imageStore="FileList"></app-file-uploader>    
