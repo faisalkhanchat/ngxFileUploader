@@ -4,7 +4,7 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 
 # Importing file uploader in module 
 
-<
+```
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { AppComponent } from './app.component';
@@ -29,12 +29,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
   bootstrap: [AppComponent]
 })
 export class AppModule { }
-
-    
-    
-
-
-
+```
 
 # File uploader component html file
     <app-file-uploader class="file-uploader" label="Upload Multiple Images" accept="image/png,image/jpg,image/jpeg"
