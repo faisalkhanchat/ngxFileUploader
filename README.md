@@ -1,8 +1,11 @@
 # NgxFileUploader
 
-Angular 4+ Single Multiple any kind of file up-loader like image , psd, word , audio, any document. 
+Angular 4+  *File Upoader* Module for single or multiple any kind of file like image , pdf, word , audio, video any document.
+This is a reusable module.
 1) Preview and delete feature.
 2) Drag & Drop Feature
+2) Easily customization
+
 
 # Importing file uploader in module 
 
