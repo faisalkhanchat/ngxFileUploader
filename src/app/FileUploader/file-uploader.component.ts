@@ -98,7 +98,12 @@ export class FileUploaderComponent implements OnInit, OnDestroy {
         this.error = null;
       }
 
-      if (this._maxFiles && typeof this._maxFiles === 'number' && this._maxFiles === this._store.length) {
+      if ((this._maxFiles -  this._store.length) < files.length) {
+        this.error = `No of files must be less than or equal to ${this._maxFiles} .`;
+        return;
+      }
+
+      if (this._maxFiles && typeof this._maxFiles === 'number' && this._maxFiles === this._store.length ) {
         this.error = `No of files must be less than or equal to ${this._maxFiles} .`;
         return;
       }
