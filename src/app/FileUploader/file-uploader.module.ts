@@ -1,13 +1,14 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FileUploaderComponent } from './file-uploader.component';
-import { MaterialModule } from '../material/material.module';
+import { MatButtonModule } from '@angular/material/button';
+import { MatIconModule } from '@angular/material/icon';
 
 @NgModule({
   imports: [
     CommonModule,
-    MaterialModule
-
+    MatButtonModule,
+    MatIconModule
   ],
   declarations: [
     FileUploaderComponent
